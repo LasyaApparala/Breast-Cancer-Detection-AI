@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Breast Tumor Severity Classifier
 
 A clinical decision-support platform that accepts patient medical documents and structured clinical data, extracts oncology-validated features, and produces a grounded breast tumor severity classification. The two-step pipeline first determines benign vs. malignant, then applies TNM-based AJCC staging (Stage I–IV) for malignant cases only.
@@ -38,3 +39,7 @@ See `docker-compose.yml` for service definitions, build contexts, port mappings,
 Each service can be run directly on the host without Docker. See `README_NATIVE_SETUP.md` for per-service setup instructions using `pip` + virtualenv (Python services) and `npm` (frontend).
 
 All services read configuration from a `.env` file in the project root or from the host shell environment.
+=======
+# OncoStage
+Clinical decision support for breast tumor staging (Benign / Stage I‑IV). Extracts features from reports &amp; images, no hallucination, full audit trail. Sensitivity ≥0.95, specificity ≥0.90.
+>>>>>>> 493c5e92d1fd0c23f54c8f948048cc4750ffc5ff
