@@ -1,0 +1,61 @@
+version: "3.9"
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    env_file: .env
+    depends_on:
+      - postgres
+      - redis
+
+  ml_service:
+    build: ./ml_service
+    ports:
+      - "8001:8001"
+    env_file: .env
+    volumes:
+      - ./models:/app/models:ro
+    depends_on:
+      - postgres
+      - redis
+
+  celery_worker:
+    build: ./ml_service
+    command: celery -A tasks worker --loglevel=info -Q classification_tasks
+    env_file: .env
+    depends_on:
+      - redis
+      - postgres
+
+  document_parser:
+    build: ./document_parser
+    ports:
+      - "8002:8002"
+    env_file: .env
+
+  postgres:
+    image: postgres:15-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+volumes:
+  pgdata:

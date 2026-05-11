@@ -1,0 +1,10 @@
+# document_parser dependencies
+
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+pydantic>=2.7.0
+
+# Document parsing
+pdfplumber>=0.11.0
+pytesseract>=0.3.10
+Pillow>=10.3.0
