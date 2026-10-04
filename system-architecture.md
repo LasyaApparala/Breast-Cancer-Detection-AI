@@ -611,53 +611,53 @@ graph TB
 ## 🔄 API Endpoints & Request/Response Flow
 
 ```mermaid
-graph LR
+flowchart LR
     subgraph "Frontend (React)"
-        UI_AUTH[Auth Pages]
-        UI_DASH[Dashboard]
-        UI_UPLOAD[Upload]
-        UI_RESULTS[Results]
+        UI_AUTH["Auth Pages"]
+        UI_DASH["Dashboard"]
+        UI_UPLOAD["Upload"]
+        UI_RESULTS["Results"]
     end
 
     subgraph "Backend API (FastAPI)"
         subgraph "Auth Routes (/auth)"
-            AUTH_LOGIN[POST /login]
-            AUTH_REGISTER[POST /register]
+            AUTH_LOGIN["POST /login"]
+            AUTH_REGISTER["POST /register"]
         end
 
         subgraph "Classification Routes (/classify)"
-            CLASS_CREATE[POST /classify]
-            CLASS_REVIEW[GET /classify/{id}/review]
-            CLASS_CONFIRM[POST /classify/{id}/confirm]
-            CLASS_OVERRIDE[POST /classify/{id}/override]
-            CLASS_AUDIT[GET /classify/{id}/audit]
+            CLASS_CREATE["POST /classify"]
+            CLASS_REVIEW["GET /classify/{id}/review"]
+            CLASS_CONFIRM["POST /classify/{id}/confirm"]
+            CLASS_OVERRIDE["POST /classify/{id}/override"]
+            CLASS_AUDIT["GET /classify/{id}/audit"]
         end
 
         subgraph "Upload Routes (/upload)"
-            UPLOAD_DOC[POST /upload]
+            UPLOAD_DOC["POST /upload"]
         end
 
         subgraph "Admin Routes (/admin)"
-            ADMIN_STATS[GET /statistics]
-            ADMIN_OVERRIDE[GET /overrides/statistics]
+            ADMIN_STATS["GET /statistics"]
+            ADMIN_OVERRIDE["GET /overrides/statistics"]
         end
     end
 
     subgraph "ML Service (FastAPI)"
-        ML_CLASSIFY[POST /classify]
+        ML_CLASSIFY["POST /classify"]
     end
 
     subgraph "RAG Service (FastAPI)"
-        RAG_SEARCH[POST /search]
-        RAG_INGEST[POST /ingest]
+        RAG_SEARCH["POST /search"]
+        RAG_INGEST["POST /ingest"]
     end
 
     subgraph "Document Parser (FastAPI)"
-        PARSE_PARSE[POST /parse]
+        PARSE_PARSE["POST /parse"]
     end
 
     subgraph "External APIs"
-        PUBMED[PubMed API]
+        PUBMED["PubMed API"]
     end
 
     %% Frontend to Backend
