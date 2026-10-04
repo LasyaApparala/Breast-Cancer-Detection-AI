@@ -1,0 +1,56 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+dist/
+build/
+.next/
+out/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Data (keep structure but ignore content)
+ai/chroma_db/*
+ai/models/*
+backend/data/*
+backend/uploads/*
+!ai/chroma_db/.gitkeep
+!ai/models/.gitkeep
+!backend/data/.gitkeep
+!backend/uploads/.gitkeep
+
+# Keys (security)
+backend/keys/*
+!backend/keys/.gitkeep

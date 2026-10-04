@@ -1,0 +1,70 @@
+# Core backend dependencies
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+pydantic>=2.7.0
+pydantic-settings>=2.2.0
+
+# Database - PostgreSQL for structured data
+sqlalchemy>=2.0.30
+alembic>=1.13.1
+psycopg2-binary>=2.9.9
+asyncpg>=0.29.0
+
+# Database - MongoDB for documents/reports
+motor>=3.3.2
+pymongo>=4.6.1
+beanie>=1.25.0
+
+# Security / authentication
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+cryptography>=41.0.0
+PyJWT>=2.8.0
+python-multipart>=0.0.9
+
+# Async task queue with Redis
+celery>=5.4.0
+redis>=5.0.4
+
+# File processing and medical imaging
+pydicom>=2.4.0
+Pillow>=10.3.0
+python-magic>=0.4.27
+opencv-python>=4.9.0
+
+# PDF and document generation
+reportlab>=4.2.0
+weasyprint>=61.2
+jinja2>=3.1.3
+
+# HTTP client for inter-service communication
+httpx>=0.27.0
+aiofiles>=23.2.1
+
+# Monitoring and logging
+structlog>=24.1.0
+prometheus-client>=0.19.0
+sentry-sdk>=1.40.6
+
+# Data validation and serialization
+email-validator>=2.1.0
+python-dateutil>=2.8.2
+
+# Cloud storage (AWS S3 compatible)
+boto3>=1.34.0
+minio>=7.2.0
+
+# Environment and configuration
+python-dotenv>=1.0.1
+
+# Development and testing
+pytest>=8.2.0
+pytest-asyncio>=0.23.6
+pytest-cov>=5.0.0
+hypothesis>=6.100.0
+black>=24.4.0
+isort>=5.13.0
+mypy>=1.10.0
+
+# Production server
+gunicorn>=22.0.0
