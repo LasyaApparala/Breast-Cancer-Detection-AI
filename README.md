@@ -192,9 +192,6 @@ cd frontend && npm test
 4. Push to branch (`git push origin feature/your-feature`)
 5. Open a Pull Request
 
-## 📄 License
-
-This project is licensed under the MIT License — see [LICENSE](LICENSE) file for details.
 
 ## ⚠️ Medical Disclaimer
 
